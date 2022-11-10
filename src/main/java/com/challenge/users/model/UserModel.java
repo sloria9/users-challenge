@@ -45,5 +45,5 @@ public class UserModel {
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
-    private List<PhoneDTO> phones;
+    private List<PhoneModel> phone;
 }
