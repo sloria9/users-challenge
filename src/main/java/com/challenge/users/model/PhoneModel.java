@@ -25,11 +25,12 @@ public class PhoneModel {
 	private Long id;
 	
     @Column(name = "number")
-    private String number;
+    private Long number;
     
     @Column(name = "cityCode")
-    private String cityCode;
+    private Integer cityCode;
     
     @Column(name = "countryCode")
     private String countryCode;
+    
 }
