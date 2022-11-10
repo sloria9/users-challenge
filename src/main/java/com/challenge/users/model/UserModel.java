@@ -48,7 +48,7 @@ public class UserModel {
     private String token;
 
     @Column(name = "created")
-    private Date created;
+    private Date createdDt;
     
     @Column(name = "last_login")
     private Date lastLogin;
@@ -68,7 +68,7 @@ public class UserModel {
 								.cityCode(phone.getCityCode())
 								.countryCode(phone.getCountryCode())
 								.build())
-						.collect(Collectors.toList())).build();
+						.collect(Collectors.toList())).createdDt(new Date()).isActive(Boolean.TRUE).lastLogin(new Date()).build();
 	}
 
 }

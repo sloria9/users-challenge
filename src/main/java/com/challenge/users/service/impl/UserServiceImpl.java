@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService{
 			return UserResponseDTO.builder()
 					.name(userfound.getName()).email(userfound.getEmail())
 					.password(userfound.getPassword()).phones(userToDto.getPhones())
-					.createdDt(userfound.getCreated()).isActive(Boolean.TRUE).lastlogin(new Date())
+					.createdDt(userfound.getCreatedDt()).isActive(Boolean.TRUE).lastlogin(new Date())
 					.build();
 		}
 		return null;
