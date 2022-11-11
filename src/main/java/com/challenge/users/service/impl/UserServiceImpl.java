@@ -2,6 +2,8 @@ package com.challenge.users.service.impl;
 
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.challenge.users.dto.UserDTO;
@@ -17,9 +19,16 @@ import lombok.RequiredArgsConstructor;
 public class UserServiceImpl implements UserService{
 
 	private final UserRepository repositoryUser;
+	@Autowired
+    private PasswordEncoder passwordEncoder;
 
 	@Override
 	public UserResponseDTO signUp(UserDTO userdto) {
+		String password = userdto.getPassword();
+
+		String encrypPass = passwordEncoder.encode(password);
+
+		userdto.setPassword(encrypPass);
 		UserModel userNew = UserModel.dtoToModel(userdto);
 		repositoryUser.save(userNew);
 		return UserResponseDTO.builder()
