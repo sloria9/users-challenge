@@ -2,6 +2,7 @@ package com.challenge.users.model;
 
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 import javax.persistence.CascadeType;
@@ -14,6 +15,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
 
 import com.challenge.users.dto.UserDTO;
 
@@ -32,8 +36,10 @@ public class UserModel {
 
 	@Column(name = "id")
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	@GeneratedValue(generator = "UUID", strategy = GenerationType.AUTO)
+	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+	@Type(type = "org.hibernate.type.UUIDCharType")
+	private  UUID id;
 
 	@Column(name = "name")
 	private String name;
@@ -43,18 +49,18 @@ public class UserModel {
 
 	@Column(name = "password")
 	private String password;
-	
-    @Column(name = "token")
-    private String token;
 
-    @Column(name = "created")
-    private Date createdDt;
-    
-    @Column(name = "last_login")
-    private Date lastLogin;
-    
-    @Column(name = "is_active")
-    private Boolean isActive;
+	@Column(name = "token")
+	private String token;
+
+	@Column(name = "created")
+	private Date createdDt;
+
+	@Column(name = "last_login")
+	private Date lastLogin;
+
+	@Column(name = "is_active")
+	private Boolean isActive;
 
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "user_id")

@@ -7,5 +7,4 @@ public interface UserService {
 	
 	UserResponseDTO signUp(UserDTO userdto);
 	
-	UserResponseDTO login(String pass);
 }
