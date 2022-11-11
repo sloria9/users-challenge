@@ -44,8 +44,12 @@ public class UserServiceImpl implements UserService{
 		UserModel userfound = repositoryUser.findByPassword(pass).orElseThrow();
 
 		UserDTO userToDto = UserDTO.modelToDto(userfound);
-
+		
 		if(!(userfound == null)) {
+			
+			userfound.setLastLogin(new Date());
+			repositoryUser.save(userfound);
+			
 			return UserResponseDTO.builder()
 					.name(userfound.getName()).email(userfound.getEmail())
 					.password(userfound.getPassword()).phones(userToDto.getPhones())
