@@ -2,15 +2,16 @@ package com.challenge.users.dto;
 
 import java.util.Date;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Data
 @NoArgsConstructor
-@AllArgsConstructor
-@Getter
 public class ExceptionDTO {
-	private Date timestamp;
-	private String code;
-	private String detail;
+	
+    private Date timestamp;
+
+    private int code;
+
+    private String details;
 }
