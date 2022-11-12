@@ -1,6 +1,7 @@
 package com.challenge.users.dto;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 import javax.validation.constraints.Email;
@@ -20,11 +21,13 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 public class UserDTO {
-	
+
+	private UUID id;
+
 	private String name;
 
 	@Email
-	@NotEmpty
+	@NotEmpty(message = " email is mandatory ")
 	private String email;
 
 	@NotEmpty

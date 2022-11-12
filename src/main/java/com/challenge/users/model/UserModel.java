@@ -74,7 +74,8 @@ public class UserModel {
 								.cityCode(phone.getCityCode())
 								.countryCode(phone.getCountryCode())
 								.build())
-						.collect(Collectors.toList())).createdDt(new Date()).isActive(Boolean.TRUE).lastLogin(new Date()).build();
+						.collect(Collectors.toList())).createdDt(new Date())
+				.isActive(Boolean.TRUE).lastLogin(new Date()).build();
 	}
 
 }
