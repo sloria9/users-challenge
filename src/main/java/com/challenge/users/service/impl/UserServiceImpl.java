@@ -49,11 +49,10 @@ public class UserServiceImpl implements UserService, UserDetailsService{
 
 	@Override
 	public UserResponseDTO signUp(UserDTO userdto) {
-		String password = userdto.getPassword();
 
-		String encrypPass = passwordEncoder.encode(password);
-
+		String encrypPass = passwordEncoder.encode(userdto.getPassword());
 		userdto.setPassword(encrypPass);
+		
 		UserModel userNew = UserModel.dtoToModel(userdto);
 		UserModel savedUser = repositoryUser.save(userNew);
 		String token = getTokenForUser(savedUser);
@@ -63,7 +62,9 @@ public class UserServiceImpl implements UserService, UserDetailsService{
 				.password(userdto.getPassword()).phones(userdto.getPhones())
 				.createdDt(new Date()).isActive(Boolean.TRUE).lastlogin(new Date())
 				.build();
+		
 		userReturn.setToken(token);
+		
 		return userReturn;
 	}
 

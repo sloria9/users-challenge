@@ -48,8 +48,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		http.headers().frameOptions().disable();
 		http.authorizeRequests()
-		.antMatchers("/challenge/v1/sign_up").permitAll();
-		http.authorizeRequests().antMatchers("/challenge/v1/login").permitAll();
+		.antMatchers("/challenge/v1/sign_up", "/h2-console/**", "/challenge/v1/login").permitAll();
         http.authorizeRequests().anyRequest().authenticated();
 		http.addFilter(customAuthFilter);
 		http.addFilterBefore(new CustomAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
