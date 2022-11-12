@@ -1,7 +1,6 @@
 package com.challenge.users.dto;
 
 import java.util.Date;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 import com.challenge.users.model.UserModel;
@@ -20,12 +19,11 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 public class UserResponseDTO extends UserDTO{
 
-	private UUID id;
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MMM dd, yyyy HH:mm:ss a", timezone = "GMT-3")
 	private Date createdDt;
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private String token;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MMM dd, yyyy HH:mm:ss a", timezone = "GMT-3")
 	private Date lastlogin;
-	private String token; //revisar
 	private Boolean isActive;
 
 
