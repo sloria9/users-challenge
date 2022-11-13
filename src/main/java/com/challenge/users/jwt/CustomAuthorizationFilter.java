@@ -30,31 +30,31 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter{
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
-		if(request.getServletPath().equals("/challenge/v1/login")) {
-			filterChain.doFilter(request, response);
-		}else {
-			//si es otro path reviso si tiene autorization
-			String authorizatinHeader = request.getHeader("Authorization");
-			String prefix = "Bearer ";
-			if(authorizatinHeader != null && authorizatinHeader.startsWith(prefix)) {
-				try{
-					String token = authorizatinHeader.substring(prefix.length());
-					Algorithm algorithm = Algorithm.HMAC256(SECRET_KEY.getBytes());
-					JWTVerifier verifier = JWT.require(algorithm).build();
-					DecodedJWT decoderJWT = verifier.verify(token);
-					String username = decoderJWT.getSubject();
-                    Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
-                    authorities.add(new SimpleGrantedAuthority(decoderJWT.getClaim("roles").toString()));
-                    UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, null, authorities);
-                    SecurityContextHolder.getContext().setAuthentication(authenticationToken);
-                    filterChain.doFilter(request, response);
-				}catch (Exception e) {
-					
-				}
-			}else {
-                filterChain.doFilter(request, response);
+		//		if(request.getServletPath().equals("/challenge/v1/login")) {
+		//			filterChain.doFilter(request, response);
+		//		}else {
+		//si es otro path reviso si tiene autorization
+		String authorizatinHeader = request.getHeader("Authorization");
+		String prefix = "Bearer ";
+		if(authorizatinHeader != null && authorizatinHeader.startsWith(prefix)) {
+			try{
+				String token = authorizatinHeader.substring(prefix.length());
+				Algorithm algorithm = Algorithm.HMAC256(SECRET_KEY.getBytes());
+				JWTVerifier verifier = JWT.require(algorithm).build();
+				DecodedJWT decoderJWT = verifier.verify(token);
+				String username = decoderJWT.getSubject();
+				Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
+				authorities.add(new SimpleGrantedAuthority(decoderJWT.getClaim("roles").toString()));
+				UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, null, authorities);
+				SecurityContextHolder.getContext().setAuthentication(authenticationToken);
+				filterChain.doFilter(request, response);
+			}catch (Exception e) {
+
 			}
+		}else {
+			filterChain.doFilter(request, response);
 		}
 	}
+	//	}
 
 }

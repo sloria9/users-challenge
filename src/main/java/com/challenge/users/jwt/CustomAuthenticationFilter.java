@@ -17,12 +17,12 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.challenge.users.dto.ErrorsDTO;
 import com.challenge.users.dto.ExceptionDTO;
 import com.challenge.users.dto.UserResponseDTO;
+import com.challenge.users.handler.UserNotFoundException;
 import com.challenge.users.model.UserModel;
 import com.challenge.users.repository.UserRepository;
 import com.challenge.users.utils.Utilities;
@@ -55,15 +55,18 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
 			String email = request.getParameter("email");
 			String pass = request.getParameter("password");			
 			UserModel userFromDb = userRepository.findByEmail(email);
-			if (userFromDb != null && userFromDb.getIsActive()) {
-				UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(email, pass);
-				return authenticationManager.authenticate(authToken);
-			}else {
-				throw new UsernameNotFoundException("User with email " + email + " not found");
-			}
-		}catch (AuthenticationException e) {
+				if (userFromDb != null && userFromDb.getIsActive()) {
+					UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(email, pass);
+					return authenticationManager.authenticate(authToken);
+				}else {
+					throw new UserNotFoundException("User with email " + email + " not found");
+				}
+		}catch (AuthenticationException | UserNotFoundException e ) {
 			ErrorsDTO errors = new ErrorsDTO(new ArrayList<>());
-			ExceptionDTO errorDetails = new ExceptionDTO(new Date(), HttpStatus.FORBIDDEN.value(), e.getMessage());
+			ExceptionDTO errorDetails = new ExceptionDTO();
+			errorDetails.setCode(500);
+			errorDetails.setDetails(e.getMessage());
+			errorDetails.setTimestamp(new Date());
 			errors.addException(errorDetails);
 			response.setStatus(HttpStatus.FORBIDDEN.value());
 			response.setContentType("application/json");
