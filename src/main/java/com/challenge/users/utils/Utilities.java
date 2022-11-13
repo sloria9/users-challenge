@@ -18,14 +18,18 @@ public class Utilities {
         if (request != null) {
             Algorithm algorithm = Algorithm.HMAC256(SECRET_KEY.getBytes());
             if (!isRefreshToken) {
-                return JWT.create().withSubject(userDetail.getEmail())
+                return JWT.create()
+                		.withSubject(userDetail.getEmail())
                         .withExpiresAt(new Date(System.currentTimeMillis() + EXPIRY_TIME_FOR_ACCESS_TOKEN))
-                        .withIssuer(request.getRequestURL().toString()).withClaim("roles", "ROLE_ADMIN")
+                        .withIssuer(request.getRequestURL().toString())
+                        .withClaim("roles", "ROLE_ADMIN")
                         .sign(algorithm);
             } else {
-                return JWT.create().withSubject(userDetail.getEmail())
+                return JWT.create()
+                		.withSubject(userDetail.getEmail())
                         .withExpiresAt(new Date(System.currentTimeMillis() + EXPIRY_TIME_FOR_REFRESH_TOKEN))
-                        .withIssuer(request.getRequestURL().toString()).sign(algorithm);
+                        .withIssuer(request.getRequestURL().toString())
+                        .sign(algorithm);
             }
         } else {
             return null;

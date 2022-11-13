@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService, UserDetailsService{
 			throw new UsernameNotFoundException("User not found");
 		}
 		Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
-		authorities.add(new SimpleGrantedAuthority("ADMIN"));
+        authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
 		return new User(user.getEmail(), user.getPassword(), authorities);
 	}
 
