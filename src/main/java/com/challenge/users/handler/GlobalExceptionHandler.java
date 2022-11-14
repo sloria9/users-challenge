@@ -32,7 +32,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
 		return new ResponseEntity<>(errors, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
-
+	
+	
 
 	@ExceptionHandler(value = { BadCredentialsException.class })
 	public ResponseEntity<ErrorsDTO> handleBadCredentialsException(BadCredentialsException exception, WebRequest request) {
@@ -69,6 +70,18 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 		errors.addException(errorDetails);
 		return new ResponseEntity<>(errors, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
-
+	
+	@ResponseStatus(HttpStatus.BAD_REQUEST)
+	@ExceptionHandler(UserEmailExists.class)
+	public final ResponseEntity<ErrorsDTO> handleNullPointerExceptions(UserEmailExists ex, WebRequest request) {
+		ErrorsDTO errors = new ErrorsDTO(new ArrayList<>());
+		ExceptionDTO errorDetails = new ExceptionDTO();
+		errorDetails.setCode(HttpStatus.BAD_REQUEST.value());
+		errorDetails.setDetails(ex.getMessage());
+		errorDetails.setTimestamp(new Date());
+		errors.addException(errorDetails);
+		return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
+	}
+	
 
 }
