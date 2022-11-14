@@ -1,0 +1,507 @@
+{
+	"info": {
+		"_postman_id": "613d267a-36c4-43e7-9025-5bba869f06f7",
+		"name": "challenge-users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23329905"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Sofia\",\r\n    \"email\": \"sofiatest2@gmail.com\",\r\n    \"password\": \"paSsword12\",\r\n    \"phones\": [\r\n        {\r\n            \"number\": 114103525,\r\n            \"cityCode\": 11,\r\n            \"countryCode\": \"ARG\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/challenge/v1/sign_up",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"challenge",
+						"v1",
+						"sign_up"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "signup",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sofia\",\r\n    \"email\": \"sofiatest1@gmail.com\",\r\n    \"password\": \"passTest21\",\r\n    \"phones\": [\r\n        {\r\n            \"number\": 11268732,\r\n            \"cityCode\": 11,\r\n            \"countryCode\": \"ARG\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/challenge/v1/sign_up",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"challenge",
+								"v1",
+								"sign_up"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Nov 2022 20:39:13 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Sofia\",\n    \"email\": \"sofiatest1@gmail.com\",\n    \"password\": \"passTest21\",\n    \"phones\": [\n        {\n            \"number\": 11268732,\n            \"cityCode\": 11,\n            \"countryCode\": \"ARG\"\n        }\n    ],\n    \"createdDt\": \"2022-11-10 20:39:13\",\n    \"lastlogin\": \"2022-11-10 20:39:13\",\n    \"token\": null,\n    \"isActive\": true\n}"
+				},
+				{
+					"name": "signup",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sofia\",\r\n    \"email\": \"sofiatest2@gmail.com\",\r\n    \"password\": \"paSsword21\",\r\n    \"phones\": [\r\n        {\r\n            \"number\": 11268732,\r\n            \"cityCode\": 11,\r\n            \"countryCode\": \"ARG\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/challenge/v1/sign_up",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"challenge",
+								"v1",
+								"sign_up"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Nov 2022 20:42:02 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Sofia\",\n    \"email\": \"sofiatest2@gmail.com\",\n    \"password\": \"paSsword21\",\n    \"phones\": [\n        {\n            \"number\": 11268732,\n            \"cityCode\": 11,\n            \"countryCode\": \"ARG\"\n        }\n    ],\n    \"createdDt\": \"2022-11-10 20:42:02\",\n    \"lastlogin\": \"2022-11-10 20:42:02\",\n    \"token\": null,\n    \"isActive\": true\n}"
+				},
+				{
+					"name": "signup",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sofia\",\r\n    \"email\": \"sofiatest1@gmail.com\",\r\n    \"password\": \"paSsword12\",\r\n    \"phones\": [\r\n        {\r\n            \"number\": 11262732,\r\n            \"cityCode\": 11,\r\n            \"countryCode\": \"ARG\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/challenge/v1/sign_up",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"challenge",
+								"v1",
+								"sign_up"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 11 Nov 2022 05:49:23 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Sofia\",\n    \"email\": \"sofiatest1@gmail.com\",\n    \"password\": \"$2a$10$D6b9gnChmHcbEq9iAio6dOS4qLeFXnKv..dNRLT.i9aizpfXFRhKe\",\n    \"phones\": [\n        {\n            \"number\": 11262732,\n            \"cityCode\": 11,\n            \"countryCode\": \"ARG\"\n        }\n    ],\n    \"createdDt\": \"2022-11-11 05:49:23\",\n    \"lastlogin\": \"2022-11-11 05:49:23\",\n    \"token\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzb2ZpYXRlc3QxQGdtYWlsLmNvbSIsImlhdCI6MTY2ODE0NTc2MywiZXhwIjoxNjY4MjMyMTYzfQ.Je_2bO4KujjLrwRiUd3bP8lKl0Cb2QZqeKdzF6qTV-VZDXAEgCoMSLkIQCwTN3MnrOVAx3bsUjgbsYUlXrB9bg\",\n    \"isActive\": true\n}"
+				},
+				{
+					"name": "signup",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sofia\",\r\n    \"email\": \"sofiatest@gmail.com\",\r\n    \"password\": \"paSsword22\",\r\n    \"phones\": [\r\n        {\r\n            \"number\": 1145810525,\r\n            \"cityCode\": 11,\r\n            \"countryCode\": \"ARG\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/challenge/v1/sign_up",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"challenge",
+								"v1",
+								"sign_up"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 11 Nov 2022 20:52:54 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Sofia\",\n    \"email\": \"sofiatest@gmail.com\",\n    \"password\": \"$2a$10$mRlR7aixnqgZ1FUhd9czKu92AK6rCaB357Y7hLP2F2TTgaLUuKd.6\",\n    \"phones\": [\n        {\n            \"number\": 1145810525,\n            \"cityCode\": 11,\n            \"countryCode\": \"ARG\"\n        }\n    ],\n    \"id\": null,\n    \"createdDt\": \"2022-11-11 20:52:53\",\n    \"lastlogin\": \"2022-11-11 20:52:53\",\n    \"token\": null,\n    \"isActive\": true\n}"
+				},
+				{
+					"name": "working",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sofia\",\r\n    \"email\": \"sofiatest2@gmail.com\",\r\n    \"password\": \"paSsword12\",\r\n    \"phones\": [\r\n        {\r\n            \"number\": 114103525,\r\n            \"cityCode\": 11,\r\n            \"countryCode\": \"ARG\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/challenge/v1/sign_up",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"challenge",
+								"v1",
+								"sign_up"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 11 Nov 2022 21:46:17 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Sofia\",\n    \"email\": \"sofiatest2@gmail.com\",\n    \"password\": \"$2a$10$0KknrQSxLHDfn1hppwhdCO1GgQdtXqcpP5Rr4M59KgkAW/1GZ9RWy\",\n    \"phones\": [\n        {\n            \"number\": 114103525,\n            \"cityCode\": 11,\n            \"countryCode\": \"ARG\"\n        }\n    ],\n    \"id\": \"47a82486-3ce6-4d7e-839e-d7f4a6d5bac9\",\n    \"createdDt\": \"2022-11-11 21:46:17\",\n    \"lastlogin\": \"2022-11-11 21:46:17\",\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzb2ZpYXRlc3QyQGdtYWlsLmNvbSIsInJvbGVzIjoiUk9MRV9BRE1JTiIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9jaGFsbGVuZ2UvdjEvc2lnbl91cCIsImV4cCI6MTY2ODIwMzc3N30.mqwx9ww9yl4R7EhjG_8JlCPC67aImKkI-X2WwWlsWUU\",\n    \"isActive\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "sofiatest2@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "paSsword12",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/challenge/v1/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"challenge",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "sofiatest2@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "paSsword12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/challenge/v1/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"challenge",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "563"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Nov 2022 21:18:36 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Sofia\",\n    \"email\": \"sofiatest2@gmail.com\",\n    \"password\": \"$2a$10$o6Isz05j8pP.NSnMrNAzcOTxU73SHReoQ02RlGW6beyxKi/OFT7wm\",\n    \"phones\": [\n        {\n            \"number\": 114103525,\n            \"cityCode\": 11,\n            \"countryCode\": \"ARG\"\n        }\n    ],\n    \"id\": \"b0f5a3b7-3169-41c7-8001-57ef9729471e\",\n    \"createdDt\": \"2022-11-12 21:18:26\",\n    \"lastlogin\": \"2022-11-12 21:18:36\",\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzb2ZpYXRlc3QyQGdtYWlsLmNvbSIsInJvbGVzIjoiUk9MRV9BRE1JTiIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9jaGFsbGVuZ2UvdjEvbG9naW4iLCJleHAiOjE2NjgyODg1MTZ9.IQVVCW5-TDvH7t75oCh7a_g7b4CpAX7Y9vZERz04f4A\",\n    \"isActive\": true\n}"
+				}
+			]
+		}
+	]
+}
